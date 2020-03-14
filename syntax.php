@@ -221,14 +221,7 @@ class syntax_plugin_gchart extends DokuWiki_Syntax_Plugin {
 
         $url .= http_build_query($parameters, '', '&') . '&.png';
 
-        $align = '';
-        if($data['align'] == 'left') {
-            $align=' align="left"';
-        } elseif($data['align'] == 'right') {
-            $align=' align="right"';
-        }
-
-        $R->doc .= '<img src="'.ml($url).'" class="media'.$data['align'].'" alt="" width="'.$data['width'].'" height="'.$data['height'].'"'.$align.' />';
+        $R->doc .= '<img src="'.ml($url).'" class="media'.$data['align'].'" alt="" width="'.$data['width'].'" height="'.$data['height'].'" />';
 
         return true;
     }
